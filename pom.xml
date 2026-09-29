@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.comp_alumno</groupId>
-	<artifactId>comp_alumno</artifactId>
+		<artifactId>catalogo-clientes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>comp_alumno</name>
-	<description/>
+		<name>catalogo-clientes</name>
+		<description>Microservicio CRUD para el catálogo de clientes</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -32,7 +32,16 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
@@ -42,7 +51,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux-test</artifactId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
