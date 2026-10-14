@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.cmp_student.dto.PlayerDto;
+import com.cmp_student.dto.StudentDto;
 
 import reactor.core.publisher.Flux;
 
@@ -19,11 +19,11 @@ public class StudentService {
         this.webClient = webClient;
     }
 
-    public Flux<PlayerDto> findAll() {
+    public Flux<StudentDto> findAll() {
         return webClient.get()
                 .uri(baseUrlPlayer)
                 .retrieve()
-                .bodyToFlux(PlayerDto.class);
+                .bodyToFlux(StudentDto.class);
     }
 
 }
