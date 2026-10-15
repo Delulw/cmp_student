@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.cmp_student.dto.StudentDto;
+import com.cmp_student.dto.StudentRsDto;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 public class StudentService {
@@ -17,6 +19,14 @@ public class StudentService {
 
     public StudentService(WebClient webClient) {
         this.webClient = webClient;
+    }
+
+    public Mono<StudentRsDto> create(StudentDto studentDto) {
+        return webClient.post()
+                .uri(baseUrlPlayer)
+                .bodyValue(studentDto)
+                .retrieve()
+                .bodyToMono(StudentRsDto.class);
     }
 
     public Flux<StudentDto> findAll() {
